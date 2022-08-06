@@ -23,10 +23,6 @@
             <th>Surname</th>
             <th>Department</th>
             <th>Salary</th>
-            <th>E-Mail</th>
-            <th>Family stand</th>
-            <th>Address</th>
-            <th>Phone number</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -36,10 +32,6 @@
             <td th:text="${user.surname}"></td>
             <td th:text="${user.department}"></td>
             <td th:text="${user.salary}"></td>
-            <td th:text="${user.email}"></td>
-            <td th:text="${user.familyStand}"></td>
-            <td th:text="${user.address}"></td>
-            <td th:text="${user.phoneNumber}"></td>
             <td>
                 <a th:href="@{/users/edit/{id}(id=${user.id})}"
                    class="btn btn-primary">Update</a>

@@ -83,7 +83,7 @@ public class Config implements WebMvcConfigurer {
         LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactory.setJpaVendorAdapter(vendorAdaptor());
         entityManagerFactory.setDataSource(dataSource());
-        entityManagerFactory.setPackagesToScan("com.djurayevumid.application.model");
+        entityManagerFactory.setPackagesToScan("com.djurayevumid.application");
         Properties properties = new Properties();
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
         properties.setProperty("hibernate.show_sql", "true");
@@ -101,7 +101,7 @@ public class Config implements WebMvcConfigurer {
 //    }
 
     @Bean
-    PlatformTransactionManager transactionManager(){
+    PlatformTransactionManager transactionManager() {
         JpaTransactionManager manager = new JpaTransactionManager();
         manager.setEntityManagerFactory(entityManagerFactory().getObject());
         return manager;

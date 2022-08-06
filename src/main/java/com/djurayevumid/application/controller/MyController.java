@@ -51,12 +51,7 @@ public class MyController {
         createdUser.setSurname(user.getSurname());
         createdUser.setDepartment(user.getDepartment());
         createdUser.setSalary(user.getSalary());
-        createdUser.setEmail(user.getEmail());
-        createdUser.setFamilyStand(user.getFamilyStand());
-        createdUser.setAddress(user.getAddress());
-        createdUser.setPhoneNumber(user.getPhoneNumber());
-
-        userService.updateUser(createdUser);
+        userService.saveUser(createdUser);
 
         return "redirect:/users";
     }

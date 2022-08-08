@@ -51,7 +51,7 @@ public class MyController {
         createdUser.setSurname(user.getSurname());
         createdUser.setDepartment(user.getDepartment());
         createdUser.setSalary(user.getSalary());
-        userService.saveUser(createdUser);
+        userService.updateUser(createdUser);
 
         return "redirect:/users";
     }

@@ -1,9 +1,7 @@
 package com.djurayevumid.application.dao;
 
 import com.djurayevumid.application.model.User;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.stereotype.Repository;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -24,15 +22,21 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void saveUser(User user) {
-        entityManager.merge(user);
+        entityManager.persist(user);
     }
 
+    @Override
     public User getUser(int id) {
         return entityManager.find(User.class, id);
     }
 
+    @Override
+    public User updateUser(User user) {
+        return entityManager.merge(user);
+    }
 
 
+    @Override
     public void deleteUser(int id) {
         entityManager.remove(getUser(id));
 
